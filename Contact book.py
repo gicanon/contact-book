@@ -20,11 +20,12 @@ def add_contact():
     return contacts
     
 
-def search_contact(search_info):
+def search_contact():
     """Function for searching a contact
     If search information was found return the right contact
     If search information was not found return 'Contact doesn't exist'"""
 
+    search_info = input('''"Enter Name" or "Phone Number" or "Email Address" or "Birthday" of the contact: ''')
     search_info = search_info.lower()
     i = 0
     search_list = []
@@ -44,10 +45,11 @@ def edit_contact():
     If contact was not found return 'Contact doesn't exist'
     Otherwise let the user choose either to delete or edit the contact"""
 
-    edit_list = search_contact(search_info = input('''"Enter Name" or "Phone Number" or "Email Address" or "Birthday" of the contact: '''))
+    edit_list = search_contact()
     if edit_list == "Contact doesn't exist":
         return "Contact doesn't exist"
     else:
+        print(f"{edit_list}\n")
         index_number = contacts.index(edit_list)
         edit_info = input("""Enter the number to edit the information of one of the following categories, enter '4' for deleting the contact or '5' to exit the program.
 
@@ -104,7 +106,7 @@ Enter the number for the feature:
         add_contact()
         contacts.sort()
     elif order == "2":
-        print(search_contact(search_info = input('''"Enter Name" or "Phone Number" or "Email Address" or "Birthday" of the contact: ''')))
+        print(search_contact())
     elif order == "3":
         print(edit_contact())
         contacts.sort()
@@ -209,7 +211,7 @@ Contact {i}:
 
     #Test 3: Searching contact "Gianluca Cannone"
     test_search_contact = ['Gianluca Cannone', '0176 84078863', 'gc22299@essex.ac.uk', '03.10.1995'] 
-    search_list = search_contact(search_info = input('''"Enter Name" or "Phone Number" or "Email Address" or "Birthday" of the contact "Gianluca Cannone": '''))
+    search_list = search_contact()
     print(search_list)
     if test_search_contact == search_list:
         print(f"Contact is 'Gianluca Cannone', thus output is {True}\n")
@@ -267,4 +269,3 @@ def start_contact_book():
         return start_contact_book()
 
 start_contact_book()
-
