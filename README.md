@@ -12,7 +12,7 @@ Furthermore, it is sorted alphabetically by the name, like an actual contact boo
 
 ## Description
 
-This project has a text-based user interface design for creating a contact book. It also includes a data test and functions like a tutorial for the user. It will be discussed again later. For any modification to the contact book, a global variable list "contacts" was assigned as an empty list. In other words, the variable list "contacts" is the contact book. This list is associated with each function and can be modified by the user.
+This project has a text-based user interface design with the function of creating a contact book. It also includes a data test and functions like a tutorial for the user. It will be discussed again later. For any modification to the contact book, a global variable list "contacts" was assigned as an empty list. In other words, the variable list "contacts" is the contact book. This list is associated with each function and can be modified by the user.
 
 If the user wants to add a new contact, the function "add_contact" will execute this feature. The function "add_contact" will let the user add a contact step by step in a user-friendly manner. First, the user will be asked to enter the name, phone number, email address and birthday to create a simple contact. Then, the function appends the created contact automatically to the list "contacts".
 
