@@ -1,10 +1,10 @@
-#Contact book(list) as global variable
+#Contact list (book) as global variable
 contacts =[]
 
 
 def add_contact():
-    """Function for adding a contact
-    Return contacts"""
+    """Function for adding a contact.
+    Return the entire contact list"""
 
     contact_list = []
     input_name = input("""Enter Givenname and Surname: """)
@@ -21,9 +21,9 @@ def add_contact():
     
 
 def search_contact():
-    """Function for searching a contact
-    If search information was found return the right contact
-    If search information was not found return 'Contact doesn't exist'"""
+    """Function for searching a contact.
+    If search information was found, return the proper contact.
+    If search information was not found, return 'Contact doesn't exist'."""
 
     search_info = input('''"Enter Name" or "Phone Number" or "Email Address" or "Birthday" of the contact: ''')
     search_info = search_info.lower()
@@ -41,9 +41,9 @@ def search_contact():
 
 
 def edit_contact():
-    """Function for editing or deleting a contact
-    If contact was not found return 'Contact doesn't exist'
-    Otherwise let the user choose either to delete or edit the contact"""
+    """Function for editing or deleting a contact.
+    If contact was not found, return 'Contact doesn't exist'.
+    Otherwise, let the user choose to delete or edit the contact."""
 
     edit_list = search_contact()
     if edit_list == "Contact doesn't exist":
@@ -80,16 +80,8 @@ def edit_contact():
 
 
 def ask_order():
-    """Ask the user which feature they want to choose:
-
-    1. Add another contact
-    2. Search and read a contact
-    3. Edit or delete a contact
-    4. Show entire contact book
-
-    and accordingly call the right function.
-
-    Except the user quit the contact book"""
+    """Ask the user which features they want to choose and the proper function will be retrieved. 
+    Except the user quits the contact book."""
 
     order = input("""Please choose what for features you want to use for your contact book.
 Enter the number for the feature:
@@ -121,14 +113,8 @@ Enter the number for the feature:
 
 def user_interface():
     """The Unser Interface:
-    Ask user to enter at least 5 records to its contact book and let they choose to:
-
-    1. Add another contact
-    2. Search and read a contact
-    3. Edit or delete a contact
-    4. Show entire contact book
-
-    Until the user quit the contact book"""
+    Ask the user to enter at least 5 records to their contact book and let the user choose a feature over and over. 
+    Except the user quits the contact book."""
 
     print("""Please enter at least 5 records to your contact book.
 Enter following information for each contact:""")
@@ -163,17 +149,17 @@ Enter the number:
 
 
 def test_data():
-    """Test 1: Show Contact list with two contacts
+    """Test 1: Show the contact list with two contacts.
     Please enter for the test two contacts with the following information:
 
-    1st Contact: ['Gianluca Cannone', '0176 84078863', 'gc22299@essex.ac.uk', '03.10.1995']
-    2nd Contact: ['Arron Fox', '0151 81743283', 'arron.fox@gmail.com', '04.12.1990']
+    1st Contact: ['Gianluca Cannone', '017684078863', 'gc22299@essex.ac.uk', '03.10.1995'].
+    2nd Contact: ['Arron Fox', '015181743283', 'arron.fox@gmail.com', '04.12.1990'].
     
-    Test 2: Sort contact list alphabetically and show contact list
+    Test 2: Sort the contact list alphabetically and show the contact list.
 
-    Test 3: Search contact "Gianluca Cannone" by entering any information of the contact and show the contact
+    Test 3: Search the contact "Gianluca Cannone" by entering any information of the contact and show the contact.
     
-    Test 4: Edit email address from contact "Gianluca Cannone" to gianluca.cannone@gmail.com and show the contact
+    Test 4: Edit the email address from contact "Gianluca Cannone" to gianluca.cannone@gmail.com and show the contact.
     The user will be asked to enter the following input:
 
     Input 1: Gianluca Cannone
@@ -186,9 +172,9 @@ def test_data():
     global contacts
     print("""Please enter for the test two contacts with the following information:
 
-1st Contact: [Gianluca Cannone, 0176 84078863, gc22299@essex.ac.uk, 03.10.1995]
-2nd Contact: [Arron Fox, 0151 81743283, arron.fox@gmail.com, 04.12.1990]""")
-    test_list = [['Gianluca Cannone', '0176 84078863', 'gc22299@essex.ac.uk', '03.10.1995'], ['Arron Fox', '0151 81743283', 'arron.fox@gmail.com', '04.12.1990']]
+1st Contact: [Gianluca Cannone, 017684078863, gc22299@essex.ac.uk, 03.10.1995]
+2nd Contact: [Arron Fox, 015181743283, arron.fox@gmail.com, 04.12.1990]""")
+    test_list = [['Gianluca Cannone', '017684078863', 'gc22299@essex.ac.uk', '03.10.1995'], ['Arron Fox', '015181743283', 'arron.fox@gmail.com', '04.12.1990']]
     for i in range(1,3):
         print(f"""
 Contact {i}:
@@ -200,7 +186,7 @@ Contact {i}:
     else:
         print(f"Contact list output is {False}\n")
     
-    #Test 2: Sorting contact list 
+    #Test 2: Sorting the contact list 
     test_list.sort() 
     contacts.sort()
     print(contacts)
@@ -209,8 +195,8 @@ Contact {i}:
     else:
         print(f"Contact list is sorted wrong, thus output is {False}\n")
 
-    #Test 3: Searching contact "Gianluca Cannone"
-    test_search_contact = ['Gianluca Cannone', '0176 84078863', 'gc22299@essex.ac.uk', '03.10.1995'] 
+    #Test 3: Searching the contact "Gianluca Cannone"
+    test_search_contact = ['Gianluca Cannone', '017684078863', 'gc22299@essex.ac.uk', '03.10.1995'] 
     search_list = search_contact()
     print(search_list)
     if test_search_contact == search_list:
@@ -218,15 +204,15 @@ Contact {i}:
     else:
         print(f"Contact is wrong, thus output is {False}\n")
     
-    #Test 4: Editing email address from contact "Gianluca Cannone" to gianluca.cannone@gmail.com
+    #Test 4: Editing the email address from contact "Gianluca Cannone" to gianluca.cannone@gmail.com
     print("""Edit email address from contact "Gianluca Cannone" to gianluca.cannone@gmail.com
-You will be asked to enter following information:
+You will be asked to enter the following information:
     
 Input 1: Enter for example the name "Gianluca Cannone" to search the contact
 Input 2: Enter the number "2" to edit the email address
 Input 3: Enter new email address "gianluca.cannone@gmail.com"
 """)
-    test_edit_contact = ['Gianluca Cannone', '0176 84078863', 'gianluca.cannone@gmail.com', '03.10.1995']
+    test_edit_contact = ['Gianluca Cannone', '017684078863', 'gianluca.cannone@gmail.com', '03.10.1995']
     edit_email_contact = edit_contact()
     print(edit_email_contact)
     if test_edit_contact == edit_email_contact:
@@ -234,22 +220,22 @@ Input 3: Enter new email address "gianluca.cannone@gmail.com"
     else:
         print(f"Email address is not gianluca.cannone@gmail.com, thus output is {False}\n")
     
-    #Test 5: Showing entire contact list
-    test_entire_contact = [['Arron Fox', '0151 81743283', 'arron.fox@gmail.com', '04.12.1990'], ['Gianluca Cannone', '0176 84078863', 'gianluca.cannone@gmail.com', '03.10.1995']]
+    #Test 5: Showing the entire contact list
+    test_entire_contact = [['Arron Fox', '015181743283', 'arron.fox@gmail.com', '04.12.1990'], ['Gianluca Cannone', '017684078863', 'gianluca.cannone@gmail.com', '03.10.1995']]
     print(contacts)
     if test_entire_contact == contacts:
         print(f"Contact list Output is {True}\n")
     else:
         print(f"Contact list Output is {False}\n")
 
-    #Clearing contact book
+    #Clearing the contact list (book)
     contacts = []
     return contacts
 
 
 def start_contact_book():
-    """Function for starting the contact book
-    Ask user either to start a data test or with the contact book and adding its first contacts"""
+    """Function for starting the contact book.
+    Ask the user either to start a data test or with the contact book."""
 
     print("Welcome to your contact book. Feel free to start a data test or start adding your first contacts.\n")
     order = input("""Enter '1' to start the data test or enter '2' to start with your contact book: 
